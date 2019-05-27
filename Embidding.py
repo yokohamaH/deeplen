@@ -6,8 +6,8 @@ from keras.models import Sequential
 from keras.layers import Embedding, Flatten, Dense
 import matplotlib.pyplot as plt
 
-imdb_dir = 'aclimdb/aclImdb'
-glove_dir = 'glove.6B'
+imdb_dir = 'debu/aclimdb/aclImdb'
+glove_dir = 'debu/glove.6B'
 
 train_dir = os.path.join(imdb_dir, 'train')
 labels = []
