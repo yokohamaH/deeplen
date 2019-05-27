@@ -6,8 +6,8 @@ import os
 import shutil
 import matplotlib.pyplot as plt
 
-original_dataset_dir = 'dog_cat/kaggle_original_data'
-base_dir = 'dog_cat/cat_and_dogs_small'
+
+base_dir = 'debu/dog_cat/cat_and_dogs_small'
 train_dir = os.path.join(base_dir, 'train')
 validation_dir = os.path.join(base_dir, 'validation')
 test_dir = os.path.join(base_dir, 'test')
