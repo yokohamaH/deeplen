@@ -2,6 +2,7 @@ from keras.datasets import imdb
 from keras.models import Sequential
 from keras.layers import Embedding, SimpleRNN, Dense
 from keras.preprocessing import sequence
+import matplotlib.pyplot as plt
 
 max_features = 10000
 max_len = 500
