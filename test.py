@@ -1,23 +1,15 @@
-def accumulate_list(iterable):
-    current = 0
-    lst = []
-    for element in iterable:
-        current += element
-        lst.append(current)
-    return lst
+import sys
+import re
 
-
-def accumulate_generator(iterable):
-    current = 0
-    for element in iterable:
-        current += element
-        yield current
-
-
-# ジェネレータイテレータ
-gen = accumulate_generator((1, 2, 3, 4, 5))
-for e in gen:
-    print(e)
-# リスト
-lst = accumulate_list((1, 2, 3, 4, 5))
-print(lst)
+path = 'code\debu\aozora\ningen_shikkaku.txt'
+bindata = open(path, "rb")
+lines = bindata.readlines()
+for line in lines:
+    text = line.decode('Shift_JIS')    # Shift_JISで読み込み
+    text = re.split(r'\r', text)[0]     # 改行削除
+    text = text.replace('｜', '')       # ルビ前記号削除
+    text = re.sub(r'《.+?》', '', text)    # ルビ削除
+    text = re.sub(r'［＃.+?］', '', text)  # 入力者注削除
+    print(text)
+    file = open('data_rojinto_umi.txt', 'a',
+                encoding='utf-8').write(text)  # UTF-8に変換
